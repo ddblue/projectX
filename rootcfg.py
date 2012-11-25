@@ -2,8 +2,9 @@ from nevow import loaders, rend, tags as T
 from twisted.web.static import File
 import os
 
-_sourcedir = os.path.dirname('css')
+_sourcedir = os.path.dirname('')
 css = File(_sourcedir + 'css', defaultType= 'text/css')
+imgs = File(_sourcedir + 'imgs', defaultType= 'image/png')
 
 class RootTemplate(rend.Page):
     addSlash = True
@@ -35,6 +36,7 @@ class RootPage(rend.Page):
 	    'homepage': Homepage(),
 	    'about' : About(),
 	    'css' : css,
+	    'imgs' : imgs,
     
 	}
 
