@@ -7,11 +7,11 @@ css = File(_sourcedir + '/css', defaultType= 'text/css')
 imgs = File(_sourcedir + '/imgs', defaultType= 'image/png')
 
 class RootTemplate(rend.Page):
-    addSlash = True
+    addSlash = 0
     myhtmlfile = None
     mycss = None
     myjs = None
-    docFactory = loaders.htmlfile('template.html')
+    docFactory = loaders.htmlfile('html/template.html')
 
     def render_contents(self, ctx, data):
 	return loaders.htmlfile(self.myhtmlfile)
@@ -37,6 +37,7 @@ class RootPage(rend.Page):
 	    'about' : About(),
 	    'css' : css,
 	    'imgs' : imgs,
+	    '' : self,
     
 	}
 
